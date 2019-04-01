@@ -1,0 +1,37 @@
+<ion-menu>
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title color="secondary">Data Management System</ion-title>
+      <ion-label slot="end" color="primary">
+        Hello <%=userinfo.userid%>!
+      </ion-label>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button>
+        <ion-icon slot="start" name='book'></ion-icon>
+        <a href="/article">Article Management</a>
+      </ion-item>
+      <ion-item button>
+        <ion-icon slot="start" name='person'></ion-icon>
+        <a href="/user_inf">User Management</a>
+      </ion-item>
+      <ion-item button>
+        <ion-icon slot="start" name='send'></ion-icon>
+        <ion-label>
+          <a href="/article/add">Upload Articles</a>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+    <ion-item button>
+      <ion-icon slot="start" name='settings'></ion-icon>
+      <ion-label>Set Up</ion-label>
+      <ion-button fill="clear" href="/user/logout" slot="end">
+        <ion-icon name="log-out"></ion-icon>Logout
+      </ion-button>
+    </ion-item>
+  </ion-footer>
+</ion-menu>

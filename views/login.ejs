@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <%- include public/head_link.ejs%>
+
+<body>
+  <ion-app>
+    <ion-split-pane>
+      <%- include public/aslide_left.ejs%>
+      <ion-page class="ion-page" main>
+        <ion-header>
+          <ion-toolbar style="text-align:center">
+            <ion-title color="danger">Please Login First!</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-card padding style="width:60%;height:40%;left: 20%;top:30%">
+            <ion-card-header>
+              <ion-card-title>Login</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <form action="/user/doLogin" method="post">
+                <ion-input type="text" name="userid" placeholder="input uesrid"></ion-input>
+                <ion-input type="password" name="password" placeholder="input password"></ion-input>
+                <ion-toolbar>
+                  <ion-label color="primary"> Remember me? </ion-label>
+                  <ion-toggle slot="end" checked></ion-toggle>
+                </ion-toolbar>
+                <ion-button expand="block" type="submit">Login</ion-button>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-content>
+      </ion-page>
+
+    </ion-split-pane>
+  </ion-app>
+</body>
+
+</html>

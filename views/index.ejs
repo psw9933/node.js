@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <%- include public/head_link.ejs%>
+
+<body>
+  <ion-app>
+    <ion-split-pane>
+      <%- include public/aslide_left.ejs%>
+      <ion-page class="ion-page" main>
+        <ion-header>
+          <ion-toolbar style="text-align:center">
+            <ion-title color="danger">Please Login First!</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-button color="primary" href="/user/login">欢迎，请登录</ion-button>
+        </ion-content>
+      </ion-page>
+
+    </ion-split-pane>
+</html>

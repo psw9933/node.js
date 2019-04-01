@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+        <%- include public/head_link.ejs%>
+<body>
+    <ion-app>
+        <ion-split-pane>
+            <%- include public/aslide_left.ejs%>
+            <!-- 插入侧边栏html -->
+            <ion-page class="ion-page" main>
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-title style="text-align:center" color="danger">Article Management Page</ion-title>
+                        <ion-button fill="clear" href="/add_article" slot="end">
+                            Add<ion-icon name="book"></ion-icon>
+                          </ion-button>
+                    </ion-toolbar>
+                </ion-header>
+                <ion-content>
+                    <ion-list>
+                        <% for(var i=0;i<list.length;i++){%>
+                        <ion-item >
+                            <ion-img src="<%=list[i].pic%>" alt="not find" style="height:50px;width:20%"></ion-img>
+                                    <ion-label>
+                                        <%=list[i].title%>
+                                    </ion-label>
+                                <ion-button color="primary" slot="end" href="/article/toEdit?id=<%=list[i]._id%>" >edit</ion-button>
+                                <ion-button color="danger"  slot="end" href="/article/delete?id=<%=list[i]._id%>">delete</ion-button>
+                        </ion-item>
+                        <%}%>
+                </ion-list>
+            </ion-content>
+                </ion-page>
+          </ion-split-pane>
+    </ion-app>
+    <!-- <script>
+            let uesrid, password;
+        
+            function handleUserid(event) {
+                uesrid = event.target.value;
+            }
+        
+            function handlePassword(event) {
+                password = event.target.value;
+            }
+            function alert(){
+              console.log(uesrid,password)
+            }
+          </script> -->
+</body>
+</html>

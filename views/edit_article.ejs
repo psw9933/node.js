@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+        <%- include public/head_link.ejs%>
+<body>
+  <ion-app>
+    <ion-split-pane>
+      <%- include public/aslide_left.ejs%>
+      <ion-page class="ion-page" main>
+        <ion-header>
+          <ion-toolbar style="text-align:center">
+            <ion-title color="danger">Editing Articles Page</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-card padding style="width:80%;height:90%;left: 10%;right: 20%;">
+            <ion-card-content>
+              <form action="/article/edit" method="post" enctype="multipart/form-data">
+                <ion-list>
+                  <ion-item>
+                    <ion-label slot="start"> title: </ion-label>
+                    <ion-input type="text" name="title" value="<%=list.title%>"> </ion-input>
+                    <ion-input type="hidden" name="_id" value="<%=list._id%>"> </ion-input>
+                    <ion-input type="hidden" name="pic" value="<%=list.pic%>"> </ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label slot="start"> author: </ion-label>
+                    <ion-input type="text" name="by" value="<%=list.by%>"> </ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <div solt="start">
+                        <ion-label> likes: </ion-label>
+                        <ion-input type="number" name="likes" value="<%=list.likes%>"> </ion-input>
+                      </div>
+                      <div solt="end">
+                        <ion-label> level: </ion-label>
+                        <ion-input type="number" name="level" value="<%=list.level%>"> </ion-input>
+                      </div>
+                    </ion-item>
+                  <ion-item>
+                    <ion-label slot="start"> picture:</ion-label>
+                    <ion-img src="<%=list.pic%>" alt="not find" style="height:50px;width:20%"></ion-img>
+                    <ion-input type="file" name="pic"> </ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label slot="start"> content: </ion-label>
+                    <ion-textarea rows="16" cols="20" name="content" value="<%=list.content%>"></ion-textarea>
+                  </ion-item>
+                </ion-list>
+                <ion-toolbar slot="bottom">
+                  <ion-button color="primary" type="submit" slot="end"> 保存 </ion-button>
+                </ion-toolbar>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-content>
+      </ion-page>
+    </ion-split-pane>
+  </ion-app>
+</body>
+
+
+</html>
