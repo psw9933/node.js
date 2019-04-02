@@ -41,7 +41,7 @@ router.post('/login_do', function (req, res) {
         if (data.length > 0) {
             console.log('login success!');
             // req.session.userinfo = data[0];
-            res.json({'status':"Verify success"});
+            res.json(data);
         } else {
             console.log('login fail!');
             res.json({'status':"Verify fail"});
